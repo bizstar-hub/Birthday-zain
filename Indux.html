@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two Years of Us ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --pink:#f6dce2;
+ --light:#fff5f4;
+ --rose:#bd687c;
+ --deep:#783c50;
+ --gold:#c9a36b;
+ --text:#563b42;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ background:#fff5f4;
+ color:var(--text);
+ font-family:Poppins,sans-serif;
+ overflow-x:hidden;
+}
+#progress{
+ position:fixed;top:0;left:0;width:0;height:3px;
+ background:var(--rose);z-index:100;
+ transition:.5s;
+}
+header{
+ position:fixed;top:0;width:100%;z-index:50;
+ padding:18px 7%;display:flex;
+ justify-content:space-between;
+ align-items:center;
+ background:#fff5f4d9;
+ backdrop-filter:blur(12px);
+}
+.logo{
+ font-family:'Great Vibes',cursive;
+ font-size:27px;color:var(--rose);
+}
+.counter{font-size:10px;letter-spacing:3px;color:var(--deep)}
+section{
+ display:none;min-height:100svh;
+ padding:110px 7% 65px;
+ align-items:center;justify-content:center;
+ text-align:center;position:relative;
+}
+section.active{display:flex;animation:appear 1s ease}
+@keyframes appear{
+ from{opacity:0;transform:translateY(20px)}
+ to{opacity:1;transform:translateY(0)}
+}
+.content{width:min(850px,100%);position:relative;z-index:2}
+.script{
+ font-family:'Great Vibes',cursive;
+ color:var(--rose);font-size:clamp(45px,8vw,85px);
+ line-height:1.2;
+}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:400}
+h1{font-size:clamp(48px,10vw,100px);line-height:1.1}
+h2{font-size:clamp(37px,7vw,65px);line-height:1.2}
+p{
+ font-size:14px;line-height:2;color:#846a70;
+ max-width:620px;margin:20px auto;
+}
+.eyebrow{
+ color:var(--gold);letter-spacing:5px;
+ font-size:10px;text-transform:uppercase;
+ margin-bottom:20px;
+}
+.line{
+ height:1px;width:65px;background:var(--gold);
+ margin:25px auto;
+}
+button{
+ padding:14px 25px;border:1px solid var(--rose);
+ background:var(--rose);color:white;
+ font-family:Poppins,sans-serif;
+ font-size:10px;letter-spacing:2px;
+ cursor:pointer;transition:.3s;
+ margin:8px;
+}
+button:hover{background:transparent;color:var(--rose);transform:translateY(-3px)}
+.outline{background:transparent;color:var(--rose)}
+.actions{margin-top:28px}
+.hero{
+ background:
+ linear-gradient(#fff5f4a8,#fff5f4c9),
+ url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1600&q=85') center/cover;
+}
+.heart{
+ font-size:48px;color:var(--rose);
+ animation:pulse 1.5s infinite;
+ margin:20px;
+}
+@keyframes pulse{
+ 50%{transform:scale(1.2)}
+}
+.card{
+ background:#ffffffb8;
+ border:1px solid #e6c4c9;
+ padding:clamp(25px,5vw,48px);
+ box-shadow:0 20px 60px #8e59631a;
+}
+.letter{
+ text-align:left;
+ background:#fffaf7;
+ padding:35px;
+ border:1px solid #e9ccd0;
+ box-shadow:0 15px 40px #9a65751a;
+}
+.letter p{margin:15px 0}
+.signature{
+ font-family:'Great Vibes',cursive;
+ color:var(--rose);font-size:35px;margin-top:25px;
+}
+.photo-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:12px;margin-top:30px;
+}
+.photo-grid img{
+ width:100%;height:230px;object-fit:cover;
+ border:5px solid white;
+ box-shadow:0 7px 20px #7c46551a;
+}
+.timeline{
+ max-width:570px;margin:30px auto;text-align:left;
+}
+.memory{
+ display:grid;grid-template-columns:65px 1fr;
+ gap:18px;padding:22px 0;
+ border-bottom:1px solid #e7cbd0;
+}
+.memory .num{
+ font-family:'Great Vibes',cursive;
+ color:var(--rose);font-size:32px;
+}
+.memory h3{font-size:22px;color:var(--deep)}
+.memory p{margin:5px 0;font-size:12px}
+.gifts{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:13px;margin:30px 0;
+}
+.gift{
+ min-height:150px;background:#fffaf7;
+ color:var(--rose);border:1px solid #e7c1c9;
+ font-size:35px;
+}
+.gift span{display:block;font-size:10px;margin-top:15px}
+.message{
+ font-family:'Great Vibes',cursive;
+ font-size:32px;color:var(--rose);
+ min-height:65px;margin:25px auto;
+}
+.cake{
+ font-size:100px;cursor:pointer;
+ display:inline-block;animation:float 3s infinite;
+}
+@keyframes float{50%{transform:translateY(-12px)}}
+.final{
+ background:linear-gradient(135deg,#f9e1e5,#fff5f4,#f4d7dc);
+}
+.final h1{color:var(--deep)}
+.heart-bg{
+ position:absolute;inset:0;overflow:hidden;
+ pointer-events:none;
+}
+.float-heart{
+ position:absolute;bottom:-30px;
+ color:#cf8798;opacity:.35;
+ animation:rise 8s linear infinite;
+}
+@keyframes rise{
+ to{transform:translateY(-110vh) rotate(40deg);opacity:0}
+}
+@media(max-width:600px){
+ .photo-grid{grid-template-columns:repeat(2,1fr)}
+ .photo-grid img{height:170px}
+ .gifts{gap:6px}
+ .gift{min-height:125px;padding:5px}
+}
+</style>
+</head>
+
+<body>
+<div id="progress"></div>
+
+<header>
+ <div class="logo">Our Little Story ♡</div>
+ <div class="counter" id="counter">01 / 10</div>
+</header>
+
+<!-- STEP 1 -->
+<section class="active hero" id="s1">
+ <div class="content">
+  <div class="eyebrow">A little surprise for someone special</div>
+  <div class="heart">♡</div>
+  <h1>Two Years<br><span class="script">One Beautiful Story</span></h1>
+  <div class="line"></div>
+  <p>Two years of memories, smiles, little moments and a story that means so much.</p>
+  <button onclick="go(2)">OPEN OUR STORY ♡</button>
+ </div>
+</section>
+
+<!-- STEP 2 -->
+<section id="s2">
+ <div class="heart-bg"></div>
+ <div class="content">
+  <div class="eyebrow">Chapter 02 • The Beginning</div>
+  <div class="script">It started with you...</div>
+  <h2>And became<br>something <span style="color:#bd687c">beautiful.</span></h2>
+  <div class="line"></div>
+  <p>Out of all the people in this world, life gave us a story together. And these two years have become a chapter worth celebrating.</p>
+  <button onclick="go(3)">NEXT CHAPTER →</button>
+ </div>
+</section>
+
+<!-- STEP 3 -->
+<section id="s3">
+ <div class="content">
+  <div class="eyebrow">Chapter 03 • A Letter</div>
+  <div class="script">Dear Zain...</div>
+  <div class="letter">
+   <p>My favourite person,</p>
+   <p>Two years. It feels so special to look back and realise how many little moments have become part of our story.</p>
+   <p>Thank you for being a part of my days, my smiles and my memories. Every relationship has its own journey, and ours is a story I want to keep making beautiful.</p>
+   <p>I don't need perfect moments. I just wish for honest smiles, understanding, care and many more memories together.</p>
+   <div class="signature">Forever grateful for us ♡</div>
+  </div>
+  <button onclick="go(4)">KEEP READING →</button>
+ </div>
+</section>
+
+<!-- STEP 4 -->
+<section id="s4">
+ <div class="content">
+  <div class="eyebrow">Chapter 04 • Little Things</div>
+  <div class="script">You know what I love?</div>
+  <h2>The little things<br>about <span style="color:#bd687c">us.</span></h2>
+  <div class="card">
+   <p>♡ The random conversations.</p>
+   <p>♡ The silly jokes and unexpected laughter.</p>
+   <p>♡ The care hidden in little gestures.</p>
+   <p>♡ The memories we never planned.</p>
+   <p>♡ Knowing there is always another chapter to write.</p>
+  </div>
+  <button onclick="go(5)">OUR MEMORIES →</button>
+ </div>
+</section>
+
+<!-- STEP 5 -->
+<section id="s5">
+ <div class="content">
+  <div class="eyebrow">Chapter 05 • Our Gallery</div>
+  <div class="script">Moments to remember</div>
+  <h2>Our little <span style="color:#bd687c">world.</span></h2>
+  <p>These are sample romantic photos. Replace them with your own pictures to make this gallery truly yours.</p>
+  <div class="photo-grid">
+   <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=85" alt="Romantic roses">
+   <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=85" alt="Couple holding hands">
+   <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=85" alt="Couple together">
+   <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=85" alt="Wedding celebration">
+   <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=600&q=85" alt="Sunset">
+   <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=85" alt="Golden sunset">
+  </div>
+  <button onclick="go(6)">OUR JOURNEY →</button>
+ </div>
+</section>
+
+<!-- STEP 6 -->
+<section id="s6">
+ <div class="content">
+  <div class="eyebrow">Chapter 06 • Two Years</div>
+  <div class="script">Look how far we've come...</div>
+  <h2>Our <span style="color:#bd687c">journey.</span></h2>
+  <div class="timeline">
+   <div class="memory">
+    <div class="num">01</div>
+    <div><h3>The First Chapter</h3><p>The beginning of something special.</p></div>
+   </div>
+   <div class="memory">
+    <div class="num">02</div>
+    <div><h3>Getting Closer</h3><p>Learning more about each other, one day at a time.</p></div>
+   </div>
+   <div class="memory">
+    <div class="num">03</div>
+    <div><h3>Two Years of Us</h3><p>A collection of memories, lessons and love.</p></div>
+   </div>
+   <div class="memory">
+    <div class="num">04</div>
+    <div><h3>More to Come</h3><p>Our story still has beautiful pages ahead.</p></div>
+   </div>
+  </div>
+  <button onclick="go(7)">A PRAYER FOR US →</button>
+ </div>
+</section>
+
+<!-- STEP 7 -->
+<section id="s7">
+ <div class="content">
+  <div class="eyebrow">Chapter 07 • My Dua</div>
+  <div class="script">A little prayer for us...</div>
+  <div class="card">
+   <h2 style="color:#bd687c">May Allah...</h2>
+   <p>Keep our hearts kind and our intentions pure.</p>
+   <p>Give us patience, understanding and respect.</p>
+   <p>Protect us from misunderstandings and guide us towards what is best.</p>
+   <p>Fill our lives with peace, happiness and blessings. Ameen. ♡</p>
+  </div>
+  <button onclick="go(8)">OPEN YOUR GIFTS →</button>
+ </div>
+</section>
+
+<!-- STEP 8 -->
+<section id="s8">
+ <div class="content">
+  <div class="eyebrow">Chapter 08 • Little Surprises</div>
+  <div class="script">Three gifts for you</div>
+  <h2>Choose a <span style="color:#bd687c">heart.</span></h2>
+  <p>Tap the gifts to reveal their hidden messages.</p>
+  <div class="gifts">
+   <button class="gift" onclick="openGift(0,this)">🎁<span>GIFT ONE</span></button>
+   <button class="gift" onclick="openGift(1,this)">💗<span>GIFT TWO</span></button>
+   <button class="gift" onclick="openGift(2,this)">💌<span>GIFT THREE</span></button>
+  </div>
+  <div class="message" id="giftMessage">A little surprise is waiting...</div>
+  <button onclick="go(9)">ONE MORE THING →</button>
+ </div>
+</section>
+
+<!-- STEP 9 -->
+<section id="s9">
+ <div class="content">
+  <div class="eyebrow">Chapter 09 • Make a Wish</div>
+  <div class="script">Close your eyes...</div>
+  <h2>Make a <span style="color:#bd687c">wish.</span></h2>
+  <p>Tap the cake and make a birthday wish. May this new year bring you everything good.</p>
+  <div class="cake" onclick="wish()">🎂</div>
+  <div class="message" id="wishMessage">Your special moment is here ♡</div>
+  <button onclick="go(10)">THE FINAL CHAPTER →</button>
+ </div>
+</section>
+
+<!-- STEP 10 -->
+<section class="final" id="s10">
+ <div class="content">
+  <div class="heart">♡</div>
+  <div class="eyebrow">Chapter 10 • Always Us</div>
+  <div class="script">Two years down...</div>
+  <h1>And a lifetime<br>of <span style="color:#bd687c">memories.</span></h1>
+  <div class="line"></div>
+  <p style="font-size:17px">Happy Birthday, Zain. Thank you for being part of this beautiful story. Here's to more laughter, more understanding, more memories and many more chapters together.</p>
+  <div class="signature">With love, always ♡</div>
+  <button onclick="celebrate()">SEND LOVE ✨</button>
+  <button class="outline" onclick="go(1)">READ OUR STORY AGAIN</button>
+ </div>
+</section>
+
+<script>
+let current=1;
+
+function go(n){
+ document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+ document.getElementById("s"+n).classList.add("active");
+ current=n;
+ document.getElementById("counter").innerText=
+ String(n).padStart(2,"0")+" / 10";
+ document.getElementById("progress").style.width=(n*10)+"%";
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(n===10) celebrate();
+}
+
+const gifts=[
+ "🎁 My first gift: I wish you happiness in every little thing.",
+ "💗 My second gift: May our story keep growing with care and understanding.",
+ "💌 My third gift: Two years are special, and every new memory matters."
+];
+let opened=[false,false,false];
+
+function openGift(n,btn){
+ if(opened[n])return;
+ opened[n]=true;
+ btn.innerHTML="💝<span>OPENED ♡</span>";
+ document.getElementById("giftMessage").innerText=gifts[n];
+}
+
+let wished=false;
+function wish(){
+ if(wished)return;
+ wished=true;
+ document.getElementById("wishMessage").innerText=
+ "May your wish come true, Zain. Happy Birthday! ♡";
+ confetti(50);
+}
+
+function celebrate(){confetti(100)}
+
+function confetti(count){
+ const icons=["♡","✧","♥","✦","🌸"];
+ for(let i=0;i<count;i++){
+  const el=document.createElement("span");
+  el.innerText=icons[Math.floor(Math.random()*icons.length)];
+  el.style.position="fixed";
+  el.style.left=Math.random()*100+"vw";
+  el.style.top="-30px";
+  el.style.fontSize=(12+Math.random()*18)+"px";
+  el.style.color=Math.random()>.5?"#bd687c":"#c9a36b";
+  el.style.zIndex="200";
+  el.style.pointerEvents="none";
+  el.style.transition="transform 4s linear,opacity 4s";
+  document.body.appendChild(el);
+  requestAnimationFrame(()=>{
+   el.style.transform="translateY(110vh) rotate(360deg)";
+   el.style.opacity="0";
+  });
+  setTimeout(()=>el.remove(),4200);
+ }
+}
+
+// Floating hearts in the background
+function floatingHearts(){
+ const heart=document.createElement("span");
+ heart.className="float-heart";
+ heart.innerText="♡";
+ heart.style.left=Math.random()*100+"vw";
+ heart.style.fontSize=(15+Math.random()*25)+"px";
+ heart.style.animationDuration=(6+Math.random()*6)+"s";
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),12000);
+}
+setInterval(floatingHearts,900);
+</script>
+</body>
+</html>
